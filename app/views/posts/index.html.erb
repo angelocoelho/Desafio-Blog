@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Posts" %>
+
+<h1>Livros que você leu este ano</h1>
+
+<div id="posts">
+  <% @posts.each do |post| %>
+    <%= render post %>
+    <p>
+      <%= link_to "Mostrar este livro", post %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "Novo livro", new_post_path %>
